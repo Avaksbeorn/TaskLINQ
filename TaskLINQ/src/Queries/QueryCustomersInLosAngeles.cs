@@ -17,10 +17,17 @@ namespace LINQQueriesProject.Queries
                     return;
                 }
 
-                var losAngelesCustomers = from customer in customers
-                                          join city in cities on customer.CityID equals city.ID
-                                          where city.Name == "Лос-Анджелес"
-                                          select customer;
+                var cityDict = cities.ToDictionary(city => city.ID);
+
+                var losAngelesCityId = cityDict.Values.FirstOrDefault(city => city.Name == "Лос-Анджелес")?.ID;
+
+                if (losAngelesCityId == null)
+                {
+                    Console.WriteLine("Город Лос-Анджелес не найден.");
+                    return;
+                }
+
+                var losAngelesCustomers = customers.Where(customer => customer.CityID == losAngelesCityId);
 
                 Console.WriteLine("\nКлиенты, проживающие в Лос-Анджелесе:");
                 foreach (var customer in losAngelesCustomers)
