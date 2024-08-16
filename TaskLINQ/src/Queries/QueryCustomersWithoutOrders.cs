@@ -17,11 +17,9 @@ namespace LINQQueriesProject.Queries
                     return;
                 }
 
-                var customersWithoutOrders = from customer in customers
-                                             join order in orders on customer.ID.ToString() equals order.CustomerID into customerOrders
-                                             from co in customerOrders.DefaultIfEmpty()
-                                             where co == null
-                                             select customer;
+                var customerIdsWithOrders = new HashSet<string>(orders.Select(order => order.CustomerID));
+
+                var customersWithoutOrders = customers.Where(customer => !customerIdsWithOrders.Contains(customer.ID.ToString()));
 
                 Console.WriteLine("\nКлиенты без заказов:");
                 foreach (var customer in customersWithoutOrders)
