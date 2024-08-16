@@ -1,0 +1,52 @@
+[
+  {
+    "ID": 1,
+    "Name": "John Doe",
+    "CityID": 1
+  },
+  {
+    "ID": 2,
+    "Name": "Jane Smith",
+    "CityID": 1
+  },
+  {
+    "ID": 3,
+    "Name": "Alice Johnson",
+    "CityID": 2
+  },
+  {
+    "ID": 4,
+    "Name": "Bob Brown",
+    "CityID": 4
+  },
+  {
+    "ID": 5,
+    "Name": "Charlie Davis",
+    "CityID": 5
+  },
+  {
+    "ID": 6,
+    "Name": "Diana Evans",
+    "CityID": 2
+  },
+  {
+    "ID": 7,
+    "Name": "Edward Wilson",
+    "CityID": 2
+  },
+  {
+    "ID": 8,
+    "Name": "Fiona Moore",
+    "CityID": 2
+  },
+  {
+    "ID": 9,
+    "Name": "George Taylor",
+    "CityID": 9
+  },
+  {
+    "ID": 10,
+    "Name": "Hannah Anderson",
+    "CityID": 9
+  }
+]
